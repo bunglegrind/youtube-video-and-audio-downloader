@@ -1,0 +1,6 @@
+{
+  "description": "",
+  "devDependencies": {
+    "web-ext": "^7.6.0"
+  }
+}
