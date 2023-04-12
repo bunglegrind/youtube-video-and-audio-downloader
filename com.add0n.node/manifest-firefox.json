@@ -3,5 +3,8 @@
     "description": "Node Host for Native Messaging",
     "path": "run.bat",
     "type": "stdio",
-    "allowed_extensions": ["{daf44bf7-a45e-4450-979c-91cf07434c3d}"]
+    "allowed_extensions": [
+        "{daf44bf7-a45e-4450-979c-91cf07434c3d}",
+        "{f73df109-8fb4-453e-8373-f59e61ca4da3}"
+    ]
 }
