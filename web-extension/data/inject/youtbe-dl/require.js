@@ -1,9 +1,7 @@
 'use strict';
 
 window.exports = {};
-window.module = {
-  exports: {}
-};
+window.module = {exports: {}};
 // disable updates
 window.process = {
   env: {
@@ -12,20 +10,42 @@ window.process = {
 };
 
 window.require = name => {
-  // console.log(name);
+  console.log(name);
   if (name === './cache') {
     return window.Cache;
   }
-  else if (name === './utils') {
+  if (name === '../package.json') {
+    return {
+        version: "0.1"
+    };
+  }
+  if (name === './agent') {
+    return window.agent;
+  }
+  if (name === "fs") {
+    return {
+       writeFileSync: function (filename, opt) {
+         return filename;
+       }
+    };
+  }
+  if (name ==== "tough-cookie") {
+      return {
+          Cookie: "",
+          CookieJar: "",
+          canonicalDomain: ""
+      };
+  }
+  if (name === './utils') {
     return window.utils;
   }
-  else if (name === './info') {
+  if (name === './info') {
     return window.info;
   }
-  else if (name === './info-extras') {
+  if (name === './info-extras') {
     return window.extras;
   }
-  else if (name === 'timers') {
+  if (name === 'timers') {
     return {
       setTimeout(...args) {
         setTimeout(...args);
@@ -35,22 +55,22 @@ window.require = name => {
       }
     };
   }
-  else if (name === 'url') {
+  if (name === 'url') {
     return window;
   }
-  else if (name === './url-utils') {
+  if (name === './url-utils') {
     return window.urlUtils;
   }
-  else if (name === './formats') {
+  if (name === './formats') {
     return window.formats;
   }
-  else if (name === './format-utils') {
+  if (name === './format-utils') {
     return window.formatUtils;
   }
-  else if (name === './sig') {
+  if (name === './sig') {
     return window.sig;
   }
-  else if (name === 'miniget') {
+  if (name === 'miniget') {
     const r = (href, options = {}) => {
       options.headers = options.headers || {};
       options.headers.Cache = 'no-store';
@@ -74,7 +94,7 @@ window.require = name => {
     };
     return r;
   }
-  else if (name === 'url') {
+  if (name === 'url') {
     return {
       parse(href) {
         const u = new URL(href);
@@ -105,7 +125,7 @@ window.require = name => {
       }
     };
   }
-  else if (name === 'querystring') {
+  if (name === 'querystring') {
     return {
       parse(body) {
         const r = {};
@@ -121,7 +141,7 @@ window.require = name => {
       }
     };
   }
-  else if (name === 'sax') {
+  if (name === 'sax') {
     const o = {
       close() {},
       write(content) {
@@ -146,7 +166,7 @@ window.require = name => {
       }
     };
   }
-  else if (name === 'html-entities') {
+  if (name === 'html-entities') {
     return {
       AllHtmlEntities: {
         decode(str) {
@@ -157,6 +177,6 @@ window.require = name => {
       }
     };
   }
-  // console.warn('unexpected require', name);
+  console.log('unexpected require', name);
   return {};
 };

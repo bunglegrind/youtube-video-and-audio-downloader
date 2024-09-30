@@ -12,6 +12,8 @@ window.getFullInfo = async href => {
   window.formats = Object.assign({}, window.module.exports);
   await import('./vendor/utils.js');
   window.utils = Object.assign({}, window.exports);
+  await import('./vendor/agent.js');
+  window.agent = Object.assign({}, window.exports);
   await import('./vendor/sig.js');
   window.sig = Object.assign({}, window.exports);
   await import('./vendor/info-extras.js');
