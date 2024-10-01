@@ -2,5 +2,8 @@
   "description": "",
   "devDependencies": {
     "web-ext": "^7.6.0"
+  },
+  "scripts": {
+      "start": "npx web-ext run -v -f \"\\Program Files\\Firefox Developer Edition\\firefox.exe\""
   }
 }
